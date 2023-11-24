@@ -104,3 +104,12 @@ textarea:focus {
 .button:hover::before {
     width: 200%;
 }
+
+.footer-col{
+    background-color: white;
+}
+
+.section-m2{
+    left: 600px;
+    margin: 10px 0;
+}
