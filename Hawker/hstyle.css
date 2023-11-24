@@ -5,6 +5,9 @@ body {
     background: #d9dcea;
 }
 
+.color-h{
+    color:#088178;
+}
 .container {
     display: flex;
     width: 100%;
@@ -24,9 +27,9 @@ h1 {
 .professional {
     flex: 1;
     padding: 20px;
-    border: 2px solid #ffffff;
+    border: 2px solid #f7f0f0;
     border-radius: 15px;
-    background: linear-gradient(180deg, #3498db, #e74c3c);
+    background: #f3efef;
     margin: 20px;
     transition: transform 0.3s ease;
     max-height: 80vh;
