@@ -4,61 +4,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saarthi Login </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/3bc8e24f41.js"></script>
+  <link rel="stylesheet" href="/Customer/style.css">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <nav>
-    <div class="container">
-      <ul>
-        <li>Home</li>
-        <li>Services</li>
-        <li>Product</li>
-        <li>Client</li>
-        <li>Contact</li>
+  <section id="header">
+    <a href="index.html"><img src="/Customer/img/logo1.png" class="logo" alt=""></a>
+
+    <div>
+      <ul id="navbar">
+        <li><a href="indexproject.html" class="active">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Contact</a>
+          <div class="dropdown-content">
+            <p>Phone: <br>+91 9996103246</p>
+            <p>Email: saarthihelp@gmail.com</p>
+            <p>Address: Jaypee Institute Of Information Tecgnology,Noida,Uttar Pradesh</p>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </div>
-  </nav>
-  <!-- Carousal Start -->
+  </section>
+
   <div class="carscl section-p1">
     <div class="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item">
-        <!-- <div class="carousel-caption">
-            <h2>Slide 1</h2>
-            <p>This is the first slide.</p>
-          </div> -->
-      </div>
-      <div class="carousel-item">
-        <!-- <div class="carousel-caption">
-            <h2>Slide 2</h2>
-            <p>This is the second slide.</p>
-          </div> -->
-      </div>
-      <div class="carousel-item">
-        <!-- <div class="carousel-caption">
-            <h2>Slide 3</h2>
-            <p>This is the third slide.</p>
-          </div> -->
-      </div>
-      <div class="carousel-item">
-        <!-- <div class="carousel-caption">
-            <h2>Slide 4</h2>
-            <p>This is the fourth slide.</p>
-          </div> -->
-      </div>
-      <div class="carousel-item">
-        <!-- <div class="carousel-caption">
-            <h2>Slide 5</h2>
-            <p>This is the fifth slide.</p>
-          </div> -->
+      <div class="carousel-inner">
+        <div class="carousel-item">
+
+        </div>
+        <div class="carousel-item">
+
+        </div>
+        <div class="carousel-item">
+
+        </div>
+        <div class="carousel-item">
+
+        </div>
+        <div class="carousel-item">
+
+        </div>
       </div>
     </div>
   </div>
-  </div>
-  <!-- Carousal End -->
 
   <div class="regcl">
     <div class="cont">
@@ -80,9 +78,9 @@
           <span>Confirm Password</span>
           <input type="password">
         </label>
-        <button type="button" class="submit">Sign Up Now</button>
+        <button type="button" class="submit" onclick="window.location.href='/Customer/index.html'">Sign Up Now</button>
       </div>
-  
+
       <div class="sub-cont">
         <div class="img">
           <div class="img-text m-up">
@@ -98,8 +96,8 @@
             <span class="m-in">Customer</span>
           </div>
         </div>
-  
-  
+
+
         <div class="form sign-up">
           <h2>Vendor Registration</h2>
           <label>
@@ -118,12 +116,54 @@
             <span>Confirm Password</span>
             <input type="password">
           </label>
-  
-          <button type="button" class="submit">Sign Up Now</button>
+
+          <button type="button" class="submit" onclick="window.location.href='/Hawker/indexproject.html'">Sign Up Now</button>
         </div>
       </div>
     </div>
   </div>
+
+  <footer class="section-p1 footer-col">
+    <div class="col">
+      <img src="/Customer/img/logo1.png" alt="Saarthi" class="footer-logo">
+      <h4>Contact Us</h4>
+      <p class="footer-para"><strong>Address: </strong>Jaypee Institute Of Information Tecgnology,
+        Noida,Uttar Pradesh</p>
+      <p class="footer-para"><strong>Phone: </strong> +91 9996103246/ +91 7267990338</p>
+      <p class="footer-para"><strong>Email:</strong> saarthihelp@gmail.com </p>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About Us</a>
+      <a href="#">Delivery Option</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+
+    <div class="col install">
+      <h4 class="footer-para">Install App</h4>
+      <p class="footer-para">From App Store or Google Play</p>
+      <div class="row">
+        <img src="/Customer/img/pay/app.jpg" alt="Get From App Store">
+        <img src="/Customer/img/pay/play.jpg" alt="Get From Play Store">
+      </div>
+      <p class="footer-para">Secured Payment Gateways</p>
+      <img src="/Customer/img/pay/pay.png" alt="Secured Payment Gateways">
+    </div>
+    <div class="copyright">
+      <p>&copy; 2023-Present, Saarthi Team</p>
+    </div>
+  </footer>
   <script type="text/javascript" src="./index.js"></script>
 </body>
 
