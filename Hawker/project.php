@@ -2,7 +2,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$db="HAWKER";
+$db="ecommerce";
 $con=mysqli_connect($servername,$username,$password,$db);
 if($con)
 {
@@ -14,7 +14,7 @@ echo "Not connected";
 }
 
 /*
-$query1="create database HAWKER";
+$query1="create database ecoomerce";
 if(mysqli_query($con,$query1))
 {
 echo "Database created successfully<br>";
