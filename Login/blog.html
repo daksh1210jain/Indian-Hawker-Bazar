@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/3bc8e24f41.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="/Customer/style.css">
@@ -15,13 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
     <title>Customer</title>
 </head>
+
 <body>
     <section id="header">
         <a href="index.html"><img src="/Customer/img/logo1.png" class="logo" alt=""></a>
 
         <div>
             <ul id="navbar">
-                <li><a href="index.html">Home</a></li>   
+                <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Contact</a>
@@ -36,7 +39,7 @@
         </div>
     </section>
 
-    <section id="page-header" class="blog-header"> 
+    <section id="page-header" class="blog-header">
         <h2>#Read More</h2>
         <p>Read all case studies about our products!!</p>
     </section>
@@ -48,8 +51,11 @@
             </div>
             <div class="blog-details">
                 <h2>Ms.Sherry</h2>
-                <p class="para">Sherry, a beacon of appreciation, eloquently speaks of the hawker's tireless efforts and delectable street food.</p>
-                <a href="#">Continue Reading</a>    
+                <p class="para">Sherry, a beacon of appreciation, eloquently speaks of the hawker's tireless efforts and
+                    delectable street food.</p>
+                <a href="#" class="continue-reading" id="conred">Continue Reading</a>
+                <p class="extra-para" style="display: none;">This is the extra paragraph that will be shown when
+                    "Continue Reading" is clicked.</p>
             </div>
             <h1>13/01</h1>
         </div>
@@ -60,8 +66,11 @@
             </div>
             <div class="blog-details">
                 <h2>Mr.Jason</h2>
-                <p class="para">Jason, known for her graciousness, not only praises the hawker's delicious offerings but also admires their polite demeanor and excellent service.</p>
-                <a href="#">Continue Reading</a>    
+                <p class="para">Jason, known for her graciousness, not only praises the hawker's delicious offerings but
+                    also admires their polite demeanor and excellent service.</p>
+                <a href="#" class="continue-reading" id="conred">Continue Reading</a>
+                <p class="extra-para" style="display: none;">This is the extra paragraph that will be shown when
+                    "Continue Reading" is clicked.</p>
             </div>
             <h1>13/04</h1>
         </div>
@@ -72,8 +81,13 @@
             </div>
             <div class="blog-details">
                 <h2>Mr.Aman</h2>
-                <p class="para">Amidst bustling streets, the local hawker stands as a beacon of delectable flavors and impeccable service. Their dishes not only tantalize taste buds but also reflect a remarkable dedication to providing excellent, polite service, creating an unforgettable culinary experience for all patrons</p>
-                <a href="#">Continue Reading</a>    
+                <p class="para">Amidst bustling streets, the local hawker stands as a beacon of delectable flavors and
+                    impeccable service. Their dishes not only tantalize taste buds but also reflect a remarkable
+                    dedication to providing excellent, polite service, creating an unforgettable culinary experience for
+                    all patrons</p>
+                <a href="#" class="continue-reading" id="conred">Continue Reading</a>
+                <p class="extra-para" style="display: none;">This is the extra paragraph that will be shown when
+                    "Continue Reading" is clicked.</p>
             </div>
             <h1>12/01</h1>
         </div>
@@ -84,8 +98,11 @@
             </div>
             <div class="blog-details">
                 <h2>Mr.Praduman</h2>
-                <p class="para">An elderly man cherishes the hawker's gracious service and savory dishes, a timeless refuge where polite gestures and delicious flavors converge.</p>
-                <a href="#">Continue Reading</a>    
+                <p class="para">An elderly man cherishes the hawker's gracious service and savory dishes, a timeless
+                    refuge where polite gestures and delicious flavors converge.</p>
+                <a href="#" class="continue-reading" id="conred">Continue Reading </a>
+                <p class="extra-para" style="display: none;">This is the extra paragraph that will be shown when
+                    "Continue Reading" is clicked.</p>
             </div>
             <h1>16/01</h1>
         </div>
@@ -160,5 +177,30 @@
             <p>&copy; 2023-Present, Saarthi Team</p>
         </div>
     </footer>
+    <script>
+        let continueReadingLinks = document.querySelectorAll('.continue-reading');
+
+        continueReadingLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                let extraPara = event.target.nextElementSibling;
+                let arrowIcon = event.target.querySelector('i');
+
+                if (extraPara.style.display === 'none') {
+                    extraPara.style.display = 'block';
+                    event.target.firstChild.nodeValue = 'Read Less ';
+                    arrowIcon.classList.remove('fa-arrow-down');
+                    arrowIcon.classList.add('fa-arrow-up');
+                } else {
+                    extraPara.style.display = 'none';
+                    event.target.firstChild.nodeValue = 'Continue Reading ';
+                    arrowIcon.classList.remove('fa-arrow-up');
+                    arrowIcon.classList.add('fa-arrow-down');
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

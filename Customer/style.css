@@ -588,7 +588,7 @@ footer .follow{
     margin-top: 20px;
 }
 
-footer .follow i{
+footer .follow a{
     color: #465b52;
     padding-right: 4px;
     cursor: pointer;
@@ -807,7 +807,9 @@ footer .copyright{
     top:4px;
     right:-60px;
 }
-
+#blog .extra-para{
+    color: #1a1a1a;
+}
 #blog .blog-details a:hover{
     color:#088178;   
 }
@@ -1025,4 +1027,9 @@ footer .copyright{
     border:1px solid #e2e9e1;
     padding: 10px;
     font-size:13px;
+}
+
+#cart input, #cart-add input{
+    padding: 5px;
+    border-radius: 5px;
 }
