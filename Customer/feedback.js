@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const submitBtn = document.querySelector('.submitButton');
   submitBtn.addEventListener('click', () => {
-    window.location.href = `thank-you.html?rating=${selectedRating}`;
+    window.location.href = `/Customer/thank-you.html?rating=${selectedRating}`;
   });
 });

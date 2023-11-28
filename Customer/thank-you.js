@@ -11,4 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     ratingElement.textContent = 'No Rating selected';
   }
+  var homeButton = document.getElementById('homeButton');
+    homeButton.addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
 });

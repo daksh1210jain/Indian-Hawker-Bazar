@@ -38,6 +38,20 @@ body {
   text-align: center;
 }
 
+#homeButton {
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin: 20px auto;
+  background-color: #088178;
+  color: white;
+  text-align: center;
+  line-height: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 /* .thanksImg {
 
 } */

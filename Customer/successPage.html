@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="images/dollar.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/Customer/images2/dollar.png" type="image/png" sizes="16x16">
     <title>Payment Success</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -59,7 +59,7 @@
         padding: 24px;
     }
 
-    // Paper Jagged Edge
+    /* Paper Jagged Edge */
     .jagged-edge {
         position: relative;
         height: 20px;
@@ -71,20 +71,20 @@
         content: "";
         display: block;
         position: absolute;
-        //bottom: 20px;
+        bottom: 20px;
         left: 0;
         right: 0;
         height: 20px;
         background: linear-gradient(45deg,
-            transparent 33.333%,
-            #ffffff 33.333%,
-            #ffffff 66.667%,
-            transparent 66.667%),
+                transparent 33.333%,
+                #ffffff 33.333%,
+                #ffffff 66.667%,
+                transparent 66.667%),
             linear-gradient(-45deg,
-            transparent 33.333%,
-            #ffffff 33.333%,
-            #ffffff 66.667%,
-            transparent 66.667%);
+                transparent 33.333%,
+                #ffffff 33.333%,
+                #ffffff 66.667%,
+                transparent 66.667%);
         background-size: 16px 40px;
         background-position: 0 -20px;
     }
@@ -139,15 +139,30 @@
         padding: 8px 0;
         margin-bottom: 24px;
     }
-    
+
     .complement {
         font-size: 18px;
         margin-bottom: 8px;
         color: #32a852;
     }
 
+
+    /* ... existing CSS ... */
+
+    #shopButton {
+        display: block;
+        width: 200px;
+        height: 40px;
+        margin: 20px auto;
+        background-color: #088178;
+        color: white;
+        text-align: center;
+        line-height: 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
     }
-    
+
     @keyframes print {
         0% {
             transform: translateY(-90%);
@@ -214,6 +229,17 @@
                 <div class="jagged-edge"></div>
             </div>
         </div>
+        <button id="shopButton">Go to Shop Page</button>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var shopButton = document.getElementById('shopButton');
+            shopButton.addEventListener('click', function () {
+                window.location.href = '/customer/shop.html';
+            });
+        });
+    </script>
 </body>
+
 </html>

@@ -320,19 +320,19 @@ h2.resp-accordion {
 }
 
 li.resp-tab-item span .pic3 {
-    background: url(../images/pic3.png) no-repeat 8px 15px #fafafa !important;
+    background: url('/Customer/images2/pic3.png') no-repeat 8px 15px #fafafa !important;
 }
 
 li.resp-tab-item span .pic1 {
-    background: url(../images/pic1.png) no-repeat 29px 15px #fafafa !important;
+    background: url('/Customer/images2/pic1.png') no-repeat 29px 15px #fafafa !important;
 }
 
 li.resp-tab-item span .pic4 {
-    background: url(../images/pic4.png) no-repeat 31px 15px #fafafa !important;
+    background: url('/Customer/images2/pic4.png') no-repeat 31px 15px #fafafa !important;
 }
 
 li.resp-tab-item span .pic2 {
-    background: url(../images/pic2.png) no-repeat 29px 15px #fafafa !important;
+    background: url('/Customer/images2/pic2.png') no-repeat 29px 15px #fafafa !important;
 }
 
 li.resp-tab-item span .pic1,
@@ -554,7 +554,7 @@ input.text_box {
 
 .single-bottom ul li input[type="checkbox"]:checked + label span:first-child:before {
     content: "";
-    background: url(../images/11.png)no-repeat;
+    background: url('/Customer/images2/11.png')no-repeat;
     position: absolute;
     left: -1px;
     top: 0px;
@@ -653,7 +653,7 @@ label.checkbox {
 /*** checked state ***/
 .radio input + i:after {
     content: '';
-    background: url("../images/tick-mark1.png") no-repeat center;
+    background: url("/Customer/images2/tick-mark1.png") no-repeat center;
     top: 1px;
     left: 1px;
     width: 9px;
@@ -802,19 +802,19 @@ label.checkbox {
 /*-- responsive media queries --*/
 @media (max-width: 1440px) {
     li.resp-tab-item span .pic3 {
-        background: url(../images/pic3.png) no-repeat 8px 15px #fafafa !important;
+        background: url('/Customer/images2/pic3.png') no-repeat 8px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic1 {
-        background: url(../images/pic1.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic1.png') no-repeat 29px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic4 {
-        background: url(../images/pic4.png) no-repeat 31px 15px #fafafa !important;
+        background: url('/Customer/images2/pic4.png') no-repeat 31px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic2 {
-        background: url(../images/pic2.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic2.png') no-repeat 29px 15px #fafafa !important;
     }
 }
 
@@ -998,19 +998,19 @@ label.checkbox {
     }
 
     li.resp-tab-item span .pic3 {
-        background: url(../images/pic3.png) no-repeat 8px 15px #fafafa !important;
+        background: url('/Customer/images2/pic3.png') no-repeat 8px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic1 {
-        background: url(../images/pic1.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic1.png') no-repeat 29px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic4 {
-        background: url(../images/pic4.png) no-repeat 31px 15px #fafafa !important;
+        background: url('/Customer/images2/pic4.png') no-repeat 31px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic2 {
-        background: url(../images/pic2.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic2.png') no-repeat 29px 15px #fafafa !important;
     }
 
     .user-form ul li {
@@ -1049,19 +1049,19 @@ label.checkbox {
     }
 
     li.resp-tab-item span .pic3 {
-        background: url(../images/pic3.png) no-repeat 8px 15px #fafafa !important;
+        background: url('/Customer/images2/pic3.png') no-repeat 8px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic1 {
-        background: url(../images/pic1.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic1.png') no-repeat 29px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic4 {
-        background: url(../images/pic4.png) no-repeat 31px 15px #fafafa !important;
+        background: url('/Customer/images2/pic4.png') no-repeat 31px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic2 {
-        background: url(../images/pic2.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic2.png') no-repeat 29px 15px #fafafa !important;
     }
 
     li.resp-tab-item:nth-child(3),
@@ -1107,19 +1107,19 @@ label.checkbox {
     }
 
     li.resp-tab-item span .pic3 {
-        background: url(../images/pic3.png) no-repeat 8px 15px #fafafa !important;
+        background: url('/Customer/images2/pic3.png') no-repeat 8px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic1 {
-        background: url(../images/pic1.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic1.png') no-repeat 29px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic4 {
-        background: url(../images/pic4.png) no-repeat 31px 15px #fafafa !important;
+        background: url('/Customer/images2/pic4.png') no-repeat 31px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic2 {
-        background: url(../images/pic2.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic2.png') no-repeat 29px 15px #fafafa !important;
     }
 
     .swit {
@@ -1158,19 +1158,19 @@ label.checkbox {
     }
 
     li.resp-tab-item span .pic3 {
-        background: url(../images/pic3.png) no-repeat 8px 15px #fafafa !important;
+        background: url('/Customer/images2/pic3.png') no-repeat 8px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic1 {
-        background: url(../images/pic1.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic1.png') no-repeat 29px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic4 {
-        background: url(../images/pic4.png) no-repeat 31px 15px #fafafa !important;
+        background: url('/Customer/images2/pic4.png') no-repeat 31px 15px #fafafa !important;
     }
 
     li.resp-tab-item span .pic2 {
-        background: url(../images/pic2.png) no-repeat 29px 15px #fafafa !important;
+        background: url('/Customer/images2/pic2.png') no-repeat 29px 15px #fafafa !important;
     }
 
     .pay-tabs {
