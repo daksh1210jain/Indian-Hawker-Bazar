@@ -41,7 +41,7 @@
         <h2>#Read More</h2>
         <p>Read all case studies about our products!!</p>
     </section>
-    <section id="cart" class="section-p1">
+    <!-- <section id="cart" class="section-p1">
         <table width="100%">
             <thead>
                 <tr>
@@ -79,6 +79,11 @@
                     <td>Rs. 40</td>
                 </tr>
             </tbody>
+        </table>
+    </section> -->
+    <section id="cart" class="section-p1">
+        <table width="100%" id="cartTable">
+            <!-- Cart content will be dynamically generated here -->
         </table>
     </section>
     <section id="cart-add" class="section-p1">
@@ -156,6 +161,45 @@
             <p>&copy; 2023-Present, Saarthi Team</p>
         </div>
     </footer>
+    <script>
+        function displayCart() {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var cartTable = document.getElementById('cartTable');
+
+        // Clear existing table content
+        cartTable.innerHTML = '<thead><tr><td>Remove</td><td>Image</td><td>Product</td><td>Price</td><td>Quantity</td><td>Subtotal</td></tr></thead><tbody>';
+
+        // Loop through cart items and append to the table
+        cart.forEach(function (item) {
+            var row = '<tr>' +
+                '<td><a href="#" onclick="removeItem(\'' + item.name + '\')"><i class="far fa-times-circle"></i></a></td>' +
+                '<td><img src="./img/products/asset 2.jpeg" alt=""></td>' +
+                '<td>' + item.name + '</td>' +
+                '<td>Rs. ' + item.price + '</td>' +
+                '<td><input type="number" value="' + item.quantity + '"></td>' +
+                '<td>Rs. ' + (item.price * item.quantity) + '</td>' +
+                '</tr>';
+            cartTable.innerHTML += row;
+        });
+
+        // Close the table body
+        cartTable.innerHTML += '</tbody>';
+    }
+
+    // Function to remove an item from the cart
+    function removeItem(productName) {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var updatedCart = cart.filter(function (item) {
+            return item.name !== productName;
+        });
+
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        displayCart();
+    }
+
+    // Display the cart when the page loads
+    displayCart();
+    </script>
 </body>
 
 </html>
