@@ -1,0 +1,148 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: hsl(216, 12%, 8%) !important;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(19, 1fr);
+  grid-template-rows: repeat(19, 1fr);
+  height: 100%;
+  font-family: 'Rubik Spray Paint', cursive;
+
+}
+
+.mainBox {
+  height: max-content;
+  grid-row: 6/15;
+  grid-column: 8/13;
+  background-color: #181f29;
+  padding: 30px 40px;
+  border-radius: 35px;
+}
+
+.backStar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #262f38;
+  text-align: center;
+}
+
+.starImg {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.mainBox-title {
+  font-size: 26px;
+  color: aliceblue;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mainBox-text {
+  color: grey;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.button {
+  margin: 21% 7% 41% 17%;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  background: #262f38;
+  border: none;
+  color: aliceblue;
+}
+
+.button:hover {
+  background-color: grey;
+}
+
+.fixedColor {
+  background-color: grey;
+}
+
+
+
+.mainBox .submitButton {
+  background-color: #fc7613;
+  color: aliceblue;
+  border: none;
+}
+
+.mainBox .submitButton:hover {
+  background-color: aliceblue;
+  color: #fc7613;
+  border: none;
+}
+
+@media (min-width: 850px) and (max-width: 1230px) {
+  .mainBox {
+    grid-row: 6/15;
+    grid-column: 7/14;
+    background-color: #181f29;
+  }
+}
+
+@media (min-width: 460px) and (max-width: 850px) {
+  .mainBox {
+    grid-row: 6/15;
+    grid-column: 5/16;
+    background-color: #181f29;
+  }
+
+  .button {
+    width: 35px;
+    height: 35px;
+    margin: 21% 7% 51% 17%;
+  }
+}
+
+
+@media (min-width: 340px) and (max-width: 460px) {
+  .mainBox {
+    grid-row: 6/15;
+    grid-column: 3/18;
+    background-color: #181f29;
+  }
+
+  .button {
+    width: 35px;
+    height: 35px;
+    margin: 21% 7% 51% 17%;
+  }
+}
+
+
+@media (max-width: 340px) {
+  .mainBox {
+    grid-row: 6/15;
+    grid-column: 3/18;
+    background-color: #181f29;
+    padding: 20px 30px;
+  }
+
+  .button {
+    width: 28px;
+    height: 28px;
+    margin: 21% 1% 51% 1%;
+  }
+}

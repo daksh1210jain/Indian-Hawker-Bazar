@@ -1,0 +1,115 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: hsl(216, 12%, 8%) !important;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(19, 1fr);
+  grid-template-rows: repeat(19, 1fr);
+  height: 100%;
+  font-family: 'Rubik Spray Paint', cursive;
+
+}
+
+.mainBox {
+  height: max-content;
+  grid-row: 6/15;
+  grid-column: 8/13;
+  background-color: #181f29;
+  padding: 30px 40px;
+  border-radius: 35px;
+}
+
+.mainBox-title {
+  font-size: 26px;
+  color: aliceblue;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.thanksPart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 25px;
+  text-align: center;
+}
+
+#homeButton {
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin: 20px auto;
+  background-color: #088178;
+  color: white;
+  text-align: center;
+  line-height: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* .thanksImg {
+
+} */
+
+.mainBox-rating {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 15px;
+  color: #ff750b;
+  font-size: 14px;
+}
+
+
+.mainBox-text {
+  color: grey;
+  font-size: 15px;
+  text-align: center;
+}
+
+
+@media (min-width: 850px) and (max-width: 1230px) {
+  .mainBox {
+    grid-row: 6/15;
+    grid-column: 7/14;
+    background-color: #181f29;
+  }
+}
+
+@media (min-width: 460px) and (max-width: 850px) {
+  .mainBox {
+    grid-row: 6/15;
+    grid-column: 5/16;
+    background-color: #181f29;
+  }
+}
+
+
+@media (min-width: 340px) and (max-width: 460px) {
+  .mainBox {
+    grid-row: 6/15;
+    grid-column: 3/18;
+    background-color: #181f29;
+  }
+}
+
+
+@media (max-width: 340px) {
+  .mainBox {
+    grid-row: 6/15;
+    grid-column: 3/18;
+    background-color: #181f29;
+    padding: 10px 16px;
+  }
+
+  .thanksImg {
+    width: 90%;
+  }
+}

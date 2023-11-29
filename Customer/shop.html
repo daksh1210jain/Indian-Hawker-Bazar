@@ -46,7 +46,7 @@
 
     <section id="product1" class="section-p1">
         <div class="pro-container">
-            <div class="pro" onclick="window.location.href='sproduct.html';">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/sproduct.html';">
                 <img src="img/products/f1.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/shirt2.html';">
                 <img src="img/products/f2.jpg" alt="">
                 <div class="des">
                     <span>Adidas</span>
@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/shirt3.html';">
                 <img src="img/products/f3.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/shirt4.html';">
                 <img src="img/products/f4.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
@@ -110,7 +110,7 @@
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/milkpow.html';">
                 <img src="img/products/asset 0.jpeg" alt="">
                 <div class="des">
                     <span>Nestle</span>
@@ -126,7 +126,7 @@
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/egg.html';">
                 <img src="img/products/asset 6.jpeg" alt="">
                 <div class="des">
                     <span>Table White</span>
@@ -142,11 +142,11 @@
                 </div>
             </div>
 
-            <div class="pro">
-                <img src="img/products/asset 7.jpeg" alt="">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/rpaper.html';">
+                <img src="img/products/asset 9.jpeg" alt="">
                 <div class="des">
-                    <span>Mozo</span>
-                    <h5>Hand Soap</h5>
+                    <span>Raw</span>
+                    <h5>Rolling Papers</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -158,7 +158,7 @@
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/bread.html';">
                 <img src="img/products/asset 2.jpeg" alt="">
                 <div class="des">
                     <span>Britania</span>
@@ -174,7 +174,7 @@
                 </div>
             </div>
         <div class="pro-container">
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/chili.html';">
                 <img src="img/products/asset 14.jpeg" alt="">
                 <div class="des">
                     <span>Vegetable</span>
@@ -190,7 +190,7 @@
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/cucumber.html';">
                 <img src="img/products/asset 15.jpeg" alt="">
                 <div class="des">
                     <span>Vegetable</span>
@@ -206,7 +206,7 @@
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/ladyfinger.html';">
                 <img src="img/products/asset 16.jpeg" alt="">
                 <div class="des">
                     <span>Vegetbale</span>
@@ -218,11 +218,11 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h4>Rs.40</h4>
-                    <a href="#"></a><i class="fas fa-shopping-cart cart"></i></a>
+                    <a href="#" onclick="addToCart('Lady Finger', 40)"></a><i class="fas fa-shopping-cart cart"></i></a>
                 </div>
             </div>
 
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='/Customer/ssproduct/Capsicum.html';">
                 <img src="img/products/asset 17.jpeg" alt="">
                 <div class="des">
                     <span>Vegetbale</span>
@@ -313,12 +313,13 @@
 
     <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">
-            <h4>SignUp For NewLetter</h4>
+            <h4>SignUp For NewsLetter</h4>
             <p>Get E-mail Updates About our Latest Vendor and <span> Special Offers.</span></p>
         </div>
         <div class="form">
-            <input type="text" placeholder="Your Email Address">
-            <button class="normal">Sign Up</button>
+            <input type="email" id="emailInput" placeholder="Your Email Address">
+            <button class="normal" id="newssignup">Sign Up</button>
+            <p id="message" class="hidden">Subscribed for our newsletter</p>
         </div>
     </section>
 
@@ -374,5 +375,47 @@
             <p>&copy; 2023-Present, Saarthi Team</p>
         </div>
     </footer>
+    <script>
+        let continueReadingLinks = document.querySelectorAll('.continue-reading');
+
+        continueReadingLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                let extraPara = event.target.nextElementSibling;
+                let arrowIcon = event.target.querySelector('i');
+
+                if (extraPara.style.display === 'none') {
+                    extraPara.style.display = 'block';
+                    event.target.firstChild.nodeValue = 'Read Less ';
+                    arrowIcon.classList.remove('fa-arrow-down');
+                    arrowIcon.classList.add('fa-arrow-up');
+                } else {
+                    extraPara.style.display = 'none';
+                    event.target.firstChild.nodeValue = 'Continue Reading ';
+                    arrowIcon.classList.remove('fa-arrow-up');
+                    arrowIcon.classList.add('fa-arrow-down');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('newssignup').addEventListener('click', function (event) {
+                event.preventDefault();
+                var messageElement = document.getElementById('message');
+                var emailInput = document.querySelector('#newsletter input[type="email"]');
+                emailInput.value = '';
+
+                messageElement.classList.remove('hidden');
+                messageElement.classList.add('visible');
+
+
+                setTimeout(function () {
+                    messageElement.classList.remove('visible');
+                    messageElement.classList.add('hidden');
+                }, 2000);
+            });
+        });
+    </script>
 </body>
 </html>
