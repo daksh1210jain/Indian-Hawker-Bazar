@@ -52,7 +52,8 @@
             <div class="blog-details">
                 <h2>Ms.Sherry</h2>
                 <p class="para">Sherry, a beacon of appreciation, eloquently speaks of the hawker's tireless efforts and delectable street food.</p>
-                <a href="#">Continue Reading</a>    
+                <a href="#" class="continue-reading" id="conred">Continue Reading</a>
+                <p class="extra-para" style="display: none;">This is the extra paragraph that will be shown when "Continue Reading" is clicked.</p>
             </div>
             <h1>13/01</h1>
         </div>
@@ -64,7 +65,8 @@
             <div class="blog-details">
                 <h2>Mr.Jason</h2>
                 <p class="para">Jason, known for her graciousness, not only praises the hawker's delicious offerings but also admires their polite demeanor and excellent service.</p>
-                <a href="#">Continue Reading</a>    
+                <a href="#" class="continue-reading" id="conred">Continue Reading</a>
+                <p class="extra-para" style="display: none;">This is the extra paragraph that will be shown when "Continue Reading" is clicked.</p>    
             </div>
             <h1>13/04</h1>
         </div>
@@ -76,7 +78,8 @@
             <div class="blog-details">
                 <h2>Mr.Aman</h2>
                 <p class="para">Amidst bustling streets, the local hawker stands as a beacon of delectable flavors and impeccable service. Their dishes not only tantalize taste buds but also reflect a remarkable dedication to providing excellent, polite service, creating an unforgettable culinary experience for all patrons</p>
-                <a href="#">Continue Reading</a>    
+                <a href="#" class="continue-reading" id="conred">Continue Reading</a>
+                <p class="extra-para" style="display: none;">This is the extra paragraph that will be shown when "Continue Reading" is clicked.</p>    
             </div>
             <h1>12/01</h1>
         </div>
@@ -88,7 +91,8 @@
             <div class="blog-details">
                 <h2>Mr.Praduman</h2>
                 <p class="para">An elderly man cherishes the hawker's gracious service and savory dishes, a timeless refuge where polite gestures and delicious flavors converge.</p>
-                <a href="#">Continue Reading</a>    
+                <a href="#" class="continue-reading" id="conred">Continue Reading </a>
+                <p class="extra-para" style="display: none;">This is the extra paragraph that will be shown when "Continue Reading" is clicked.</p>    
             </div>
             <h1>16/01</h1>
         </div>
@@ -102,12 +106,13 @@
 
     <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">
-            <h4>SignUp For NewLetter</h4>
+            <h4>SignUp For NewsLetter</h4>
             <p>Get E-mail Updates About our Latest Vendor and <span> Special Offers.</span></p>
         </div>
         <div class="form">
-            <input type="text" placeholder="Your Email Address">
-            <button class="normal">Sign Up</button>
+            <input type="email" id="emailInput" placeholder="Your Email Address">
+            <button class="normal" id="newssignup">Sign Up</button>
+            <p id="message" class="hidden">Subscribed for our newsletter</p>
         </div>
     </section>
 
@@ -163,5 +168,47 @@
             <p>&copy; 2023-Present, Saarthi Team</p>
         </div>
     </footer>
+    <script>
+        let continueReadingLinks = document.querySelectorAll('.continue-reading');
+
+        continueReadingLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                let extraPara = event.target.nextElementSibling;
+                let arrowIcon = event.target.querySelector('i');
+
+                if (extraPara.style.display === 'none') {
+                    extraPara.style.display = 'block';
+                    event.target.firstChild.nodeValue = 'Read Less ';
+                    arrowIcon.classList.remove('fa-arrow-down');
+                    arrowIcon.classList.add('fa-arrow-up');
+                } else {
+                    extraPara.style.display = 'none';
+                    event.target.firstChild.nodeValue = 'Continue Reading ';
+                    arrowIcon.classList.remove('fa-arrow-up');
+                    arrowIcon.classList.add('fa-arrow-down');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('newssignup').addEventListener('click', function (event) {
+                event.preventDefault();
+                var messageElement = document.getElementById('message');
+                var emailInput = document.querySelector('#newsletter input[type="email"]');
+                emailInput.value = '';
+
+                messageElement.classList.remove('hidden');
+                messageElement.classList.add('visible');
+
+
+                setTimeout(function () {
+                    messageElement.classList.remove('visible');
+                    messageElement.classList.add('hidden');
+                }, 2000);
+            });
+        });
+    </script>
 </body>
 </html>
