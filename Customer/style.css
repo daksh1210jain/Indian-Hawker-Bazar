@@ -1026,3 +1026,8 @@ footer .copyright{
     padding: 10px;
     font-size:13px;
 }
+
+#cart input, #cart-add input{
+    padding: 5px;
+    border-radius: 5px;
+}
