@@ -10,7 +10,8 @@
     <script src="https://kit.fontawesome.com/3bc8e24f41.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/Customer/style.css">
+    <script src="/Customer/ssproduct/cart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,46 +42,7 @@
         <h2>#Read More</h2>
         <p>Read all case studies about our products!!</p>
     </section>
-    <!-- <section id="cart" class="section-p1">
-        <table width="100%">
-            <thead>
-                <tr>
-                    <td>Remove</td>
-                    <td>Image</td>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Subtotal</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="./img/products/asset 24.jpeg" alt=""></td>
-                    <td>Onion</td>
-                    <td>Rs. 70</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rs. 70</td>
-                </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="./img/products/f1.jpg" alt=""></td>
-                    <td>Cartoon Astronaut T-shirts</td>
-                    <td>Rs. 250</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rs. 250</td>
-                </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="./img/products/asset 16.jpeg" alt=""></td>
-                    <td>Lady Finger</td>
-                    <td>Rs. 40</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rs. 40</td>
-                </tr>
-            </tbody>
-        </table>
-    </section> -->
+
     <section id="cart" class="section-p1">
         <table width="100%" id="cartTable">
             <!-- Cart content will be dynamically generated here -->
@@ -90,23 +52,21 @@
         <div id="cupon">
         </div>
         <div id="subtotal">
-            <h3>Cart total</h3>
+            <h3>Cart subtotal</h3>
             <table>
                 <tr>
-                    <td>Cart Subtotal</td>
-                    <td>Rs. 360</td>
+                    <td><strong>Subtotal</strong></td>
+                    <td id="subtotal">Rs. 0</td>
                 </tr>
-                <tr>
-                    <td>Shipping</td>
-                    <td>Free</td>
-                </tr>
+                <!-- Add any other rows for additional costs if needed -->
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>Rs. 360</strong></td>
+                    <td id="total">Rs. 0</td>
                 </tr>
             </table>
-            <button class="normal" onclick="window.location.href='pay.html'">Proceed to checkout</button>
         </div>
+        <button class="normal" onclick="window.location.href='/Customer/pay.html'">Proceed to checkout</button>
+
     </section>
 
     <footer class="section-p1">
@@ -162,43 +122,62 @@
         </div>
     </footer>
     <script>
+        function calculateTotal() {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var total = 0;
+
+            cart.forEach(function (item) {
+                total += item.price * item.quantity;
+            });
+
+            return total;
+        }
+
+        // Function to display cart items on the cart.html page
         function displayCart() {
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        var cartTable = document.getElementById('cartTable');
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var cartTable = document.getElementById('cartTable');
 
-        // Clear existing table content
-        cartTable.innerHTML = '<thead><tr><td>Remove</td><td>Image</td><td>Product</td><td>Price</td><td>Quantity</td><td>Subtotal</td></tr></thead><tbody>';
+            // Clear existing table content
+            cartTable.innerHTML = '<thead><tr><td>Remove</td><td>Product</td><td>Price</td><td>Quantity</td><td>Total</td></tr></thead><tbody>';
 
-        // Loop through cart items and append to the table
-        cart.forEach(function (item) {
-            var row = '<tr>' +
-                '<td><a href="#" onclick="removeItem(\'' + item.name + '\')"><i class="far fa-times-circle"></i></a></td>' +
-                '<td><img src="./img/products/asset 2.jpeg" alt=""></td>' +
-                '<td>' + item.name + '</td>' +
-                '<td>Rs. ' + item.price + '</td>' +
-                '<td><input type="number" value="' + item.quantity + '"></td>' +
-                '<td>Rs. ' + (item.price * item.quantity) + '</td>' +
-                '</tr>';
-            cartTable.innerHTML += row;
-        });
+            // Loop through cart items and append to the table
+            cart.forEach(function (item) {
+                var row = '<tr>' +
+                    '<td><a href="#" onclick="removeItem(\'' + item.name + '\')"><i class="far fa-times-circle"></i></a></td>' +
+                    '<td>' + item.name + '</td>' +
+                    '<td>Rs. ' + item.price + '</td>' +
+                    '<td><span>' + item.quantity + '</span></td>' +
+                    '<td>Rs. ' + (item.price * item.quantity) + '</td>' +
+                    '</tr>';
+                cartTable.innerHTML += row;
+            });
 
-        // Close the table body
-        cartTable.innerHTML += '</tbody>';
-    }
+            // Close the table body
+            cartTable.innerHTML += '</tbody>';
 
-    // Function to remove an item from the cart
-    function removeItem(productName) {
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        var updatedCart = cart.filter(function (item) {
-            return item.name !== productName;
-        });
+            // Calculate and update subtotal and total
+            var subtotal = calculateTotal();
+            var totalElement = document.getElementById('total');
+            var subtotalElement = document.getElementById('subtotal');
 
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
+            subtotalElement.textContent = 'Total : Rs. ' + subtotal;
+            totalElement.textContent = 'Total : Rs. ' + subtotal; // If there are additional costs, adjust this accordingly
+        }
+
+        // Function to remove an item from the cart
+        function removeItem(productName) {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var updatedCart = cart.filter(function (item) {
+                return item.name !== productName;
+            });
+
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            displayCart();
+        }
+
+        // Display the cart when the page loads
         displayCart();
-    }
-
-    // Display the cart when the page loads
-    displayCart();
     </script>
 </body>
 

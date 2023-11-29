@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/3bc8e24f41.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="/Customer/style.css">
+    <script src="/Customer/ssproduct/cart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +49,7 @@
             <h4>White Bread</h4>
             <h2>Rs. 35</h2>
             <input type="number" value="1">
-            <button id="addToCartBtn" class="normal">Add to Cart</button>
+            <button onclick="addToCart('White Bread', 35)" class="normal">Add to Cart</button>
             <h4>Product Details</h4>
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quo ad, optio nostrum vero voluptate cupiditate similique voluptas iusto neque accusantium, corrupti eligendi, eum cum quis culpa adipisci deserunt dicta?</span>
         </div>
@@ -106,7 +107,8 @@
             <p>&copy; 2023-Present, Saarthi Team</p>
         </div>
     </footer>
-    <script>
+   
+    <!-- <script>
         document.getElementById('addToCartBtn').addEventListener('click', function () {
         // Get product details
         var productName = 'Britania White Bread';
@@ -142,6 +144,6 @@
         // Display the updated cart on the cart.html page
         displayCart();
     });
-    </script>
+    </script> -->
 </body>
 </html>
